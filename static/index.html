@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Management</title>
+
+    <!-- keep whatever styling you already had -->
+    <link rel="stylesheet" href="estilo.css" />
+
+    <!-- JS loads after the HTML is parsed -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Customer Management</h1>
+
+    <!-- ❶ wrapper DIV gets its own id -->
+    <div id="customer-form-wrap">
+        <h2>Add / Update Customer</h2>
+
+        <!-- ❷ the *form* now has the only id="customer-form" -->
+        <form id="customer-form">
+            <!-- hidden when we’re adding, filled when we’re editing -->
+            <input type="hidden" id="customer-id" name="id" />
+
+            <label>Name:
+                <input type="text" id="name" name="name" required />
+            </label><br />
+
+            <label>Surname:
+                <input type="text" id="surname" name="surname" required />
+            </label><br />
+
+            <label>Email:
+                <input type="email" id="email" name="email" required />
+            </label><br />
+
+            <label>Phone:
+                <input type="text" id="phone" name="phone" required />
+            </label><br />
+
+            <button type="button" onclick="addCustomer()">Add Customer</button>
+            <button type="button" onclick="updateCustomer()">Update Customer</button>
+        </form>
+    </div>
+
+    <div id="customer-list">
+        <h2>Customers</h2>
+        <ul id="customers"></ul>
+    </div>
+</body>
+</html>
+
